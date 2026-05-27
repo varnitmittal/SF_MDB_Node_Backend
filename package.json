@@ -4,8 +4,12 @@
   "description": "��#\u0000 \u0000S\u0000F\u0000_\u0000M\u0000D\u0000B\u0000_\u0000N\u0000o\u0000d\u0000e\u0000_\u0000B\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-  },
+
+    "start": "node index.js",
+
+    "dev": "nodemon index.js"
+
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/varnitmittal/SF_MDB_Node_Backend.git"
@@ -21,6 +25,7 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.14.4",
     "@grpc/proto-loader": "^0.8.1",
+    "avsc": "^5.7.9",
     "axios": "^1.16.1",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
