@@ -1,21 +1,42 @@
-module.exports = (req, res, next) => {
+module.exports = (
 
-    const apiKey =
-        req.headers['x-api-key'];
+    expectedApiKey
 
-    if (
-        apiKey !==
-        process.env.API_KEY
-    ) {
+) => {
 
-        return res.status(401).json({
+    return (
 
-            error: 'Unauthorized'
+        req,
 
-        });
+        res,
 
-    }
+        next
 
-    next();
+    ) => {
+
+        const apiKey =
+            req.get('x-api-key');
+
+        if (
+
+            !apiKey ||
+
+            apiKey.trim() !==
+            expectedApiKey.trim()
+
+        ) {
+
+            return res.status(401).json({
+
+                error:
+                    'Unauthorized'
+
+            });
+
+        }
+
+        next();
+
+    };
 
 };
